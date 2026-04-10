@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Star Registry Record</title>
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle, #0b0c2b, #000);
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+/* النجوم */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url('https://www.transparenttextures.com/patterns/stardust.png');
+  animation: moveStars 60s linear infinite;
+}
+
+@keyframes moveStars {
+  from {background-position: 0 0;}
+  to {background-position: 10000px 5000px;}
+}
+
+/* البطاقة */
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  margin-top: 80px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0px);}
+}
+
+h1 {
+  color: gold;
+}
+
+/* زر النجمة */
+.star-btn {
+  position: relative;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, gold, orange);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 15px gold;
+  transition: all 0.3s ease;
+}
+
+.star-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px gold, 0 0 40px orange;
+}
+
+.star-btn:active {
+  transform: scale(0.95);
+}
+
+.star-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+  transform: skewX(-25deg);
+  transition: 0.5s;
+}
+
+.star-btn:hover::before {
+  left: 130%;
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {opacity: 1;}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="card fade">
+  <h1>Star Registry Record</h1>
+
+  <p><strong>Star Name:</strong> Romaisa Star</p>
+  <p><strong>Registry Number:</strong> STR-2026-0001</p>
+  <p><strong>Original Star:</strong> HD 189733</p>
+  <p><strong>Constellation:</strong> Vulpecula</p>
+  <p><strong>Right Ascension:</strong> 20h 00m 43s</p>
+  <p><strong>Declination:</strong> +22° 42′ 39″</p>
+  <p><strong>Registration Date:</strong> 04 April 2026</p>
+  <p><strong>Registered For:</strong> Romaisa</p>
+
+  <p><strong>Message:</strong> ❤️ أنت النجمة التي تنير حياتي ❤️</p>
+
+  <button class="star-btn" onclick="window.open('https://stellarium-web.org/skysource/HD%20189733', '_blank')">
+    🌠 View Your Star 🌠
+  </button>
+
+  <p style="margin-top:20px; font-size:12px;">
+    This star registration is symbolic and intended as a personalized gift.
+  </p>
+</div>
+
+</body>
+</html>
